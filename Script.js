@@ -21,9 +21,9 @@ function triangle(val1,type1,val2,type2){
 
     function searchArr(){
         for(let i=0;i<=4;i++){
-           if(ValidVariants[i][0]==type1 && ValidVariants[i][1]==type2){
+           if(ValidVariants[i][0]===type1 && ValidVariants[i][1]===type2){
             return false;
-        }else if(ValidVariants[i][0]==type2 && ValidVariants[i][1]==type1){
+        }else if(ValidVariants[i][0]===type2 && ValidVariants[i][1]===type1){
             return false;
         }
         }
@@ -36,10 +36,10 @@ function triangle(val1,type1,val2,type2){
     }else if(val1<=0 || val2<=0){
         console.log("Значення не можуть бути від'ємними або нульовими.\n failed");
         return "failed";
-    }else if(((type1=="adjacent angle"||type1=="opposite angle"|| type1=="angle")&&val1>=90)|| ((type2=="adjacent angle"||type2=="opposite angle"|| type2=="angle")&&val2>=90)){
+    }else if(((type1==="adjacent angle"||type1==="opposite angle"|| type1==="angle")&&val1>=90)|| ((type2==="adjacent angle"||type2==="opposite angle"|| type2==="angle")&&val2>=90)){
         console.log("Задані кути не можуть бути більше 90.\n failed");
         return "failed";
-    }else if((type1=="hypotenuse"&&type2=="leg"&&val1<=val2)|| (type2=="hypotenuse"&&type1=="leg"&&val1>=val2)){
+    }else if((type1==="hypotenuse"&&type2==="leg"&&val1<=val2)|| (type2==="hypotenuse"&&type1==="leg"&&val1>=val2)){
         console.log("Катет не може бути більшим за гіпотенузу.\n failed");
         return "failed";
     }else{
