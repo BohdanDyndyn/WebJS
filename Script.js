@@ -106,7 +106,7 @@ function triangle(val1,type1,val2,type2){
 console.log("\n leg --- катет\n hypotenuse --- гіпотенуза\n adjacent angle --- прилеглий до катета кут\n opposite angle --- протилежний до катета кут\n angle --- один з двох гострих кутів(коли задана гіпотенуза)");
 console.log("Ввід здійснюємо так:\n  ім'я функції(перший аргумент, тип першого аргументу, другий аргумент, тип другого аргументу)\n Наприклад: triangle(10,angle,13,hypotenuse)");
 
-/*console.log("********triangle(3,leg,4,leg)")
+console.log("********triangle(3,leg,4,leg)")
 triangle(3,"leg",4,"leg");
 console.log("********triangle(3,leg,60,opposite angle)")
 triangle(3,"leg",60,"opposite angle");
@@ -117,5 +117,5 @@ triangle(3,"leg",60,"opposite angle");
 console.log("********triangle(5,hypotenuse,7,hypotenuse)")
 triangle(5,"hypotenuse",7,"hypotenuse");
 console.log("********triangle(35,angle,7,hypotenuse)")
-triangle(35,"angle",7,"hypotenuse");*/
+triangle(35,"angle",7,"hypotenuse");
 
