@@ -33,8 +33,14 @@ function triangle(val1,type1,val2,type2){
     if(!ValidTypes.includes(type1) || !ValidTypes.includes(type2)|| searchArr()){
         console.log("Будь ласка, перевірте правильність вказаних типів.\n failed");
         return "failed";
-    }else if(val1<=0 || val2<=0 || (type1==("adjacent angle"||"opposite angle"|| "angle")&&val1>=90)|| (type2==("adjacent angle"||"opposite angle"|| "angle")&&val2>=90)){
-        console.log("Значення не можуть бути від'ємними або нульовими. Або задані кути більше 90.\n failed");
+    }else if(val1<=0 || val2<=0){
+        console.log("Значення не можуть бути від'ємними або нульовими.\n failed");
+        return "failed";
+    }else if(((type1=="adjacent angle"||type1=="opposite angle"|| type1=="angle")&&val1>=90)|| ((type2=="adjacent angle"||type2=="opposite angle"|| type2=="angle")&&val2>=90)){
+        console.log("Задані кути не можуть бути більше 90.\n failed");
+        return "failed";
+    }else if((type1=="hypotenuse"&&type2=="leg"&&val1<=val2)|| (type2=="hypotenuse"&&type1=="leg"&&val1>=val2)){
+        console.log("Катет не може бути більшим за гіпотенузу.\n failed");
         return "failed";
     }else{
         let a,b,c,alpha,beta;
@@ -103,6 +109,7 @@ function triangle(val1,type1,val2,type2){
 
 }
 
+
 console.log("\n leg --- катет\n hypotenuse --- гіпотенуза\n adjacent angle --- прилеглий до катета кут\n opposite angle --- протилежний до катета кут\n angle --- один з двох гострих кутів(коли задана гіпотенуза)");
 console.log("Ввід здійснюємо так:\n  ім'я функції(перший аргумент, тип першого аргументу, другий аргумент, тип другого аргументу)\n Наприклад: triangle(10,angle,13,hypotenuse)");
 
@@ -118,4 +125,8 @@ console.log("********triangle(5,hypotenuse,7,hypotenuse)")
 triangle(5,"hypotenuse",7,"hypotenuse");
 console.log("********triangle(35,angle,7,hypotenuse)")
 triangle(35,"angle",7,"hypotenuse");
+console.log("********triangle(110,angle,7,hypotenuse)")
+triangle(110,"angle",7,"hypotenuse");
+console.log("********triangle(35,leg,7,hypotenuse)")
+triangle(35,"leg",7,"hypotenuse");
 
